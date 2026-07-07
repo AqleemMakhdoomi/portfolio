@@ -92,6 +92,19 @@
   })
 
   /**
+   * Close the menu panel when the dimming overlay is clicked
+   */
+  on('click', '.nav-overlay', function(e) {
+    let body = select('body')
+    if (body.classList.contains('mobile-nav-active')) {
+      body.classList.remove('mobile-nav-active')
+      let navbarToggle = select('.mobile-nav-toggle')
+      navbarToggle.classList.add('bi-list')
+      navbarToggle.classList.remove('bi-x')
+    }
+  })
+
+  /**
    * Scrool with ofset on links with a class name .scrollto
    */
   on('click', '.scrollto', function(e) {
