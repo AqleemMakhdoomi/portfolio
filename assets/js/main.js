@@ -261,4 +261,40 @@
     })
   });
 
+  /**
+   * Hero name magnetic-letters effect on hover (subtle)
+   */
+  const heroName = document.querySelector('#hero h1');
+  if (heroName && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const text = heroName.textContent;
+    heroName.textContent = '';
+    [...text].forEach((c) => {
+      const s = document.createElement('span');
+      s.className = 'ch';
+      s.textContent = c === ' ' ? '\u00A0' : c;
+      heroName.appendChild(s);
+    });
+    const chars = heroName.querySelectorAll('.ch');
+    heroName.addEventListener('mousemove', (e) => {
+      chars.forEach((ch) => {
+        const r = ch.getBoundingClientRect();
+        const cx = r.left + r.width / 2;
+        const cy = r.top + r.height / 2;
+        const dx = e.clientX - cx;
+        const dy = e.clientY - cy;
+        const dist = Math.hypot(dx, dy);
+        const max = 60;
+        if (dist < max) {
+          const f = 1 - dist / max;
+          ch.style.transform = `translate(${dx * 0.18 * f}px, ${dy * 0.18 * f}px)`;
+        } else {
+          ch.style.transform = '';
+        }
+      });
+    });
+    heroName.addEventListener('mouseleave', () => {
+      chars.forEach((ch) => (ch.style.transform = ''));
+    });
+  }
+
 })()
