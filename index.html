@@ -588,7 +588,8 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="https://formspree.io/f/mojobpob" method="POST" role="form" class="php-email-form">
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="name">Your Name</label>
@@ -632,11 +633,51 @@
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/purecounter/purecounter.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/typed.js/typed.min.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+  <!-- Contact form (Formspree) -->
+  <script>
+    (function () {
+      const contactForm = document.querySelector('.php-email-form');
+      if (!contactForm) return;
+      const loading = contactForm.querySelector('.loading');
+      const errorEl = contactForm.querySelector('.error-message');
+      const sentEl = contactForm.querySelector('.sent-message');
+      contactForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        if (loading) loading.style.display = 'block';
+        if (errorEl) errorEl.style.display = 'none';
+        if (sentEl) sentEl.style.display = 'none';
+        try {
+          const res = await fetch(contactForm.action, {
+            method: 'POST',
+            body: new FormData(contactForm),
+            headers: { 'Accept': 'application/json' }
+          });
+          if (loading) loading.style.display = 'none';
+          if (res.ok) {
+            if (sentEl) sentEl.style.display = 'block';
+            contactForm.reset();
+          } else {
+            const data = await res.json().catch(function () { return {}; });
+            if (errorEl) {
+              errorEl.textContent = (data.errors && data.errors.map(function (x) { return x.message; }).join(', ')) || 'Something went wrong. Please try again.';
+              errorEl.style.display = 'block';
+            }
+          }
+        } catch (err) {
+          if (loading) loading.style.display = 'none';
+          if (errorEl) {
+            errorEl.textContent = 'Network error. Please try again.';
+            errorEl.style.display = 'block';
+          }
+        }
+      });
+    })();
+  </script>
   
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
