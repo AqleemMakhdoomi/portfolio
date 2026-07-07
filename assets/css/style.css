@@ -1191,3 +1191,99 @@ section {
     padding-right: 20px 15px;
   }
 }
+
+/*--------------------------------------------------------------
+# Dark Mode (recolors backgrounds & text only; accents/layout unchanged)
+--------------------------------------------------------------*/
+body {
+  background-color: #0a1220;
+  color: #cdd6e2;
+}
+
+/* Alternating section background */
+.section-bg {
+  background: #0d1a2d;
+}
+
+/* Headings / titles -> light */
+.section-title h2,
+.about .content h3,
+.resume .resume-title,
+.resume .resume-item h4,
+.resume .resume-item2 h6,
+.skills .progress .skill,
+.facts .count-box span,
+.contact .info h4,
+.portfolio .portfolio-caption h4,
+.testimonials .testimonial-item h3,
+.services .title a,
+.breadcrumbs h2 {
+  color: #eaf1f8;
+}
+.services .title a:hover {
+  color: #37b3ed;
+}
+
+/* Muted / secondary text -> light grey */
+.facts .count-box p,
+.facts .count-box a,
+.contact .info p,
+.portfolio .portfolio-caption p,
+.portfolio #portfolio-flters li {
+  color: #93a1b5;
+}
+
+/* Cards & panels -> dark surface */
+.portfolio #portfolio-flters,
+.portfolio .portfolio-caption,
+.testimonials .testimonial-item p,
+.contact .info,
+.contact .php-email-form {
+  background: #111f33;
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+}
+.testimonials .testimonial-item p {
+  color: #cdd6e2;
+}
+.testimonials .testimonial-item p::after {
+  border-top-color: #111f33;
+}
+
+/* Skills / resume accents */
+.skills .progress-bar-wrap {
+  background: #223049;
+}
+.resume .resume-item h5 {
+  background: rgba(20, 157, 221, 0.14);
+  color: #cdd6e2;
+}
+.resume .resume-item::before {
+  background: #0a1220;
+}
+
+/* Contact icons, inputs & states */
+.contact .info i {
+  background: rgba(20, 157, 221, 0.14);
+}
+.contact .php-email-form input,
+.contact .php-email-form textarea {
+  background: #0c1626;
+  color: #cdd6e2;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.contact .php-email-form input::placeholder,
+.contact .php-email-form textarea::placeholder {
+  color: #6f7d90;
+}
+.contact .php-email-form .loading {
+  background: #111f33;
+  color: #cdd6e2;
+}
+
+/* Breadcrumbs (inner page) */
+.breadcrumbs {
+  background: #0d1a2d;
+}
+.portfolio-details .portfolio-info h3 {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
