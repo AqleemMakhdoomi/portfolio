@@ -85,22 +85,50 @@ h1, h2, h3, h4, h5, h6 {
 }
 #header .profile .social-links a {
   font-size: 18px;
-  display: inline-block;
-  background: #212431;
-  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   line-height: 1;
-  padding: 8px 0;
   margin-right: 4px;
   border-radius: 50%;
   text-align: center;
   width: 36px;
   height: 36px;
-  transition: 0.3s;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
+
+/* Brand colors for social icons */
+#header .profile .social-links a[aria-label="Microsoft Teams"] { color: #7b83eb; }
+#header .profile .social-links a[aria-label="GitHub"] { color: #e6edf3; }
+#header .profile .social-links a[aria-label="Discord"] { color: #7d8cf5; }
+#header .profile .social-links a[aria-label="LinkedIn"] { color: #3b9ae1; }
+
 #header .profile .social-links a:hover {
-  background: #149ddd;
+  transform: translateY(-3px);
   color: #fff;
   text-decoration: none;
+}
+#header .profile .social-links a[aria-label="Microsoft Teams"]:hover {
+  background: #6264A7;
+  border-color: #6264A7;
+  box-shadow: 0 6px 16px rgba(98, 100, 167, 0.5);
+}
+#header .profile .social-links a[aria-label="GitHub"]:hover {
+  background: #24292f;
+  border-color: #424a53;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.55);
+}
+#header .profile .social-links a[aria-label="Discord"]:hover {
+  background: #5865F2;
+  border-color: #5865F2;
+  box-shadow: 0 6px 16px rgba(88, 101, 242, 0.5);
+}
+#header .profile .social-links a[aria-label="LinkedIn"]:hover {
+  background: #0A66C2;
+  border-color: #0A66C2;
+  box-shadow: 0 6px 16px rgba(10, 102, 194, 0.5);
 }
 
 #main {
