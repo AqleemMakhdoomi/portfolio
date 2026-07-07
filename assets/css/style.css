@@ -1331,6 +1331,7 @@ body {
   transition: filter 0.5s ease, transform 0.6s ease;
 }
 .two-sides .ts-panel:hover img { filter: brightness(0.72); transform: scale(1.06); }
+.two-sides .ts-panel:first-child img { object-position: center 38%; }
 .two-sides .ts-overlay {
   position: absolute;
   inset: 0;
