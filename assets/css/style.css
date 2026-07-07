@@ -254,12 +254,13 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
+  position: relative;
   background: url("../img/hero-bg.jpg") top center;
   background-size: cover;
 }
 #hero:before {
   content: "";
-  background: rgba(5, 13, 24, 0.3);
+  background: linear-gradient(180deg, rgba(3, 10, 20, 0.32) 0%, rgba(3, 10, 20, 0.5) 55%, rgba(3, 10, 20, 0.82) 100%);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -271,6 +272,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   z-index: 2;
   min-width: 300px;
+  text-align: center;
 }
 #hero h1 {
   margin: 0 0 10px 0;
@@ -290,6 +292,126 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 4px;
   letter-spacing: 1px;
   border-bottom: 3px solid #149ddd;
+}
+
+/* Hero: title, location, social links */
+#hero .hero-title {
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin: 0 0 8px;
+  opacity: 0.92;
+}
+#hero .hero-typed {
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 26px;
+  margin: 0 0 16px;
+}
+#hero .hero-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 22px;
+}
+#hero .hero-location i {
+  color: #149ddd;
+  font-size: 18px;
+}
+#hero .hero-socials {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  position: relative;
+  margin-top: 44px;
+  padding-top: 28px;
+}
+#hero .hero-socials::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.28);
+}
+#hero .hero-socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-size: 27px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+#hero .hero-socials a:hover {
+  transform: translateY(-4px);
+}
+#hero .hero-socials a[aria-label="Microsoft Teams"]:hover {
+  background: #6264A7;
+  border-color: #6264A7;
+  box-shadow: 0 8px 20px rgba(98, 100, 167, 0.5);
+}
+#hero .hero-socials a[aria-label="GitHub"]:hover {
+  background: #24292f;
+  border-color: #424a53;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.55);
+}
+#hero .hero-socials a[aria-label="Discord"]:hover {
+  background: #5865F2;
+  border-color: #5865F2;
+  box-shadow: 0 8px 20px rgba(88, 101, 242, 0.5);
+}
+#hero .hero-socials a[aria-label="LinkedIn"]:hover {
+  background: #0A66C2;
+  border-color: #0A66C2;
+  box-shadow: 0 8px 20px rgba(10, 102, 194, 0.5);
+}
+
+/* Hero scroll-down cue */
+#hero .hero-scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+#hero .hero-scroll:hover {
+  color: #fff;
+}
+#hero .hero-scroll-text {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+#hero .hero-scroll i {
+  font-size: 28px;
+  line-height: 1;
+  animation: hero-scroll-bounce 1.8s infinite;
+}
+@keyframes hero-scroll-bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.7; }
+  50% { transform: translateY(8px); opacity: 1; }
 }
 .hero-cta {
   display: flex;
