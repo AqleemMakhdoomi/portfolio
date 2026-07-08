@@ -666,66 +666,198 @@ section {
 /*--------------------------------------------------------------
 # Resume
 --------------------------------------------------------------*/
-.resume .resume-title {
-  font-size: 26px;
-  font-weight: 700;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: #050d18;
+.resume .section-title p {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
 }
-.resume .resume-item {
-  padding: 0 0 20px 20px;
-  margin-top: -2px;
-  border-left: 2px solid #1f5297;
-  position: relative;
+.resume .resume-summary {
+  background: #111f33;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: 3px solid #149ddd;
+  border-radius: 14px;
+  padding: 22px 26px;
+  margin-bottom: 42px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
-.resume .resume-item h4 {
-  line-height: 18px;
-  font-size: 18px;
+.resume .resume-summary p {
+  margin: 0;
+  color: #cdd6e2;
+  font-size: 15px;
+  line-height: 1.75;
+}
+.resume .resume-actions {
+  margin-top: -24px;
+  margin-bottom: 42px;
+}
+.resume .btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(90deg, #149ddd, #37b3ed);
+  color: #04121e;
   font-weight: 600;
-  text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
-  color: #050d18;
-  margin-bottom: 10px;
+  font-size: 14px;
+  padding: 11px 22px;
+  border-radius: 26px;
+  box-shadow: 0 8px 24px rgba(20, 157, 221, 0.35);
+  transition: transform 0.25s, box-shadow 0.25s;
 }
-.resume .resume-item h5 {
+.resume .btn-download:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(20, 157, 221, 0.5);
+}
+.resume .btn-download i {
   font-size: 16px;
-  background: #e4edf9;
-  padding: 5px 15px;
-  display: inline-block;
-  font-weight: 600;
-  margin-bottom: 10px;
 }
-
-.resume .resume-item2 h6 {
-  line-height: 18px;
-  font-size: 18px;
-  font-weight: 600;
+.resume .resume-heading {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
-  color: #050d18;
-  margin-bottom: 10px;
-
+  color: #37b3ed;
+  margin: 0 0 22px;
 }
-.resume .resume-item ul {
-  padding-left: 20px;
+.resume .col-lg-5 .resume-heading:not(:first-child) {
+  margin-top: 38px;
 }
-.resume .resume-item ul li {
-  padding-bottom: 10px;
+.resume .timeline {
+  position: relative;
+  padding-left: 26px;
 }
-.resume .resume-item:last-child {
-  padding-bottom: 0;
-}
-.resume .resume-item::before {
+.resume .timeline::before {
   content: "";
   position: absolute;
-  width: 16px;
-  height: 16px;
-  border-radius: 50px;
-  left: -9px;
-  top: 0;
-  background: #fff;
-  border: 2px solid #1f5297;
+  left: 6px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(180deg, #149ddd, #223049);
+}
+.resume .tl-item {
+  position: relative;
+  margin-bottom: 34px;
+}
+.resume .tl-item:last-child {
+  margin-bottom: 0;
+}
+.resume .tl-item::before {
+  content: "";
+  position: absolute;
+  left: -26px;
+  top: 5px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #0a1220;
+  border: 2px solid #149ddd;
+  box-shadow: 0 0 10px rgba(20, 157, 221, 0.6);
+}
+.resume .tl-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+}
+.resume .tl-role {
+  font-family: "Raleway", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #eaf1f8;
+  margin: 0;
+}
+.resume .tl-date {
+  font-size: 12px;
+  font-weight: 600;
+  color: #149ddd;
+  white-space: nowrap;
+}
+.resume .tl-org {
+  color: #93a1b5;
+  font-size: 13px;
+  font-weight: 500;
+  margin: 3px 0 12px;
+}
+.resume .tl-desc {
+  color: #cdd6e2;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 16px;
+}
+.resume .tl-block {
+  margin-bottom: 16px;
+}
+.resume .tl-block:last-child {
+  margin-bottom: 0;
+}
+.resume .tl-block h5 {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #37b3ed;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+.resume .tl-item ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.resume .tl-item ul li {
+  position: relative;
+  padding-left: 18px;
+  color: #cdd6e2;
+  font-size: 14px;
+  line-height: 1.55;
+  margin-bottom: 8px;
+}
+.resume .tl-item ul li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #149ddd;
+}
+.resume .cred-card {
+  background: #111f33;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  padding: 20px 22px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+.resume .cred-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.resume .cred-list li {
+  position: relative;
+  padding-left: 26px;
+  color: #cdd6e2;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 11px;
+}
+.resume .cred-list li:last-child {
+  margin-bottom: 0;
+}
+.resume .cred-list li i {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  color: #149ddd;
+  font-size: 15px;
+}
+.resume .cred-card .tl-role {
+  font-size: 16px;
+}
+.resume .cred-card .tl-org {
+  margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------
@@ -1280,9 +1412,6 @@ body {
 /* Headings / titles -> light */
 .section-title h2,
 .about .content h3,
-.resume .resume-title,
-.resume .resume-item h4,
-.resume .resume-item2 h6,
 .facts .count-box span,
 .contact .info h4,
 .portfolio .portfolio-caption h4,
@@ -1318,15 +1447,6 @@ body {
 }
 .testimonials .testimonial-item p::after {
   border-top-color: #111f33;
-}
-
-/* Resume accents */
-.resume .resume-item h5 {
-  background: rgba(20, 157, 221, 0.14);
-  color: #cdd6e2;
-}
-.resume .resume-item::before {
-  background: #0a1220;
 }
 
 /* Contact icons, inputs & states */
