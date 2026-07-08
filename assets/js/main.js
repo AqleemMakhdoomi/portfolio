@@ -150,7 +150,7 @@
   }
 
   /**
-   * Porfolio isotope and filter
+   * Portfolio gallery layout
    */
   window.addEventListener('load', () => {
     let portfolioContainer = select('.portfolio-container');
