@@ -582,85 +582,101 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Skills — capabilities + impact
+# What I Do (expertise)
 --------------------------------------------------------------*/
-.skills .section-title p {
+.whatido .section-title p {
   max-width: 720px;
   margin-left: auto;
   margin-right: auto;
 }
-.skills .skills-stats {
-  margin-bottom: 34px;
+.whatido .xgrid > [class*="col-"] {
+  margin-bottom: 22px;
 }
-.skills .skills-stats > [class*="col-"] {
-  margin-bottom: 20px;
-}
-.skills .skill-stat {
+.whatido .xcard {
   height: 100%;
   background: #111f33;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  padding: 24px 18px;
-  text-align: center;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
-  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  padding: 26px 22px;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
-.skills .skill-stat:hover {
-  transform: translateY(-4px);
+.whatido .xcard:hover {
+  transform: translateY(-5px);
   border-color: #37b3ed;
-  box-shadow: 0 14px 40px rgba(20, 157, 221, 0.28);
+  box-shadow: 0 16px 40px rgba(20, 157, 221, 0.2);
 }
-.skills .skill-stat .s-num {
-  font-family: "Raleway", sans-serif;
-  font-weight: 700;
-  font-size: 34px;
-  line-height: 1;
-  background: linear-gradient(90deg, #2ecc71, #37b3ed);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.skills .skill-stat .s-lbl {
-  color: #eaf1f8;
-  font-size: 13px;
-  font-weight: 600;
-  margin-top: 10px;
-}
-.skills .skill-stat .s-sub {
-  color: #93a1b5;
-  font-size: 11px;
-  margin-top: 4px;
-}
-.skills .cap-group {
-  margin-bottom: 24px;
-}
-.skills .cap-group h3 {
-  font-family: "Raleway", sans-serif;
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
+.whatido .xicon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
   color: #37b3ed;
-  margin: 0 0 12px;
+  background: linear-gradient(135deg, rgba(20, 157, 221, 0.18), rgba(160, 107, 255, 0.12));
+  border: 1px solid rgba(55, 179, 237, 0.3);
+  margin-bottom: 16px;
 }
-.skills .cap-tags {
+.whatido .xcard h3 {
+  font-family: "Raleway", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  color: #eaf1f8;
+}
+.whatido .xcard p {
+  color: #aab6c6;
+  font-size: 13.5px;
+  line-height: 1.6;
+  margin: 0 0 16px;
+}
+.whatido .xtags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 7px;
 }
-.skills .cap-tags span {
+.whatido .xtags span {
+  font-size: 11.5px;
+  color: #93a1b5;
   background: #0a1220;
-  border: 1px solid rgba(55, 179, 237, 0.22);
-  color: #eaf1f8;
-  font-size: 13px;
-  padding: 8px 15px;
-  border-radius: 22px;
-  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 5px 10px;
+  border-radius: 20px;
 }
-.skills .cap-tags span:hover {
-  border-color: #37b3ed;
-  box-shadow: 0 0 14px rgba(20, 157, 221, 0.35);
-  transform: translateY(-2px);
+.whatido .tools {
+  overflow: hidden;
+  margin-top: 26px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.whatido .tools-row {
+  display: flex;
+  gap: 14px;
+  width: max-content;
+  animation: toolscroll 34s linear infinite;
+}
+.whatido .tools:hover .tools-row {
+  animation-play-state: paused;
+}
+.whatido .tool-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  background: #111f33;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 30px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #eaf1f8;
+}
+.whatido .tool-chip i {
+  font-size: 20px;
+  color: #37b3ed;
+}
+@keyframes toolscroll {
+  to { transform: translateX(-50%); }
 }
 
 /*--------------------------------------------------------------
