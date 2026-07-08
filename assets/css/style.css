@@ -680,6 +680,51 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Badges (marquee)
+--------------------------------------------------------------*/
+.badges .section-title p {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.badges .badge-marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.badges .badge-row {
+  display: flex;
+  gap: 28px;
+  width: max-content;
+  align-items: center;
+}
+.badges .badge-row.a {
+  animation: badgeleft 90s linear infinite;
+}
+.badges .badge-row.b {
+  animation: badgeright 90s linear infinite;
+  margin-top: 24px;
+}
+.badges .badge-row img {
+  height: 104px;
+  width: auto;
+  object-fit: contain;
+  flex: 0 0 auto;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.4));
+  transition: transform 0.3s;
+}
+.badges .badge-row img:hover {
+  transform: scale(1.12);
+}
+@keyframes badgeleft {
+  to { transform: translateX(-50%); }
+}
+@keyframes badgeright {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+/*--------------------------------------------------------------
 # Resume
 --------------------------------------------------------------*/
 .resume .section-title p {
