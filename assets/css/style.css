@@ -723,6 +723,17 @@ section {
   from { transform: translateX(-50%); }
   to { transform: translateX(0); }
 }
+@media (max-width: 575px) {
+  .badges .badge-row {
+    gap: 18px;
+  }
+  .badges .badge-row.b {
+    margin-top: 18px;
+  }
+  .badges .badge-row img {
+    height: 70px;
+  }
+}
 
 /*--------------------------------------------------------------
 # Resume

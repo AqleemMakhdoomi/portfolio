@@ -403,7 +403,7 @@
               ["microsoft-global-hackathon-2025.png", "Microsoft Global Hackathon 2025"],
               ["microsoft-global-hackathon-2020.png", "Microsoft Global Hackathon 2020"]
             ];
-            const mk = x => '<img src="' + base + x[0] + '" alt="' + x[1] + ' badge" loading="lazy" decoding="async">';
+            const mk = x => '<img src="' + base + x[0] + '" alt="' + x[1] + ' badge" decoding="async">';
             const half = Math.ceil(badges.length / 2);
             const set = function (id, arr) { const el = document.getElementById(id); if (el) el.innerHTML = arr.concat(arr).map(mk).join(''); };
             set('badgeRowA', badges.slice(0, half));
