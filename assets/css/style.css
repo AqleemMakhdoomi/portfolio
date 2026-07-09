@@ -684,7 +684,8 @@ section {
 --------------------------------------------------------------*/
 .whatido .stack-marquee {
   overflow: hidden;
-  margin-top: 26px;
+  margin-top: 48px;
+  padding-top: 8px;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
@@ -693,9 +694,6 @@ section {
   gap: 14px;
   width: max-content;
   animation: toolscroll 34s linear infinite;
-}
-.whatido .stack-marquee:hover .stack-row {
-  animation-play-state: paused;
 }
 .whatido .stack-chip {
   display: inline-flex;
